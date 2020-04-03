@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 # Constant variables to handle player behavior
-const ACCELERATION = 10
-const MAX_SPEED = 100
-const FRICTION = 10
+const ACCELERATION = 500
+const MAX_SPEED = 80
+const FRICTION = 500
 
 var velocity = Vector2.ZERO
 
@@ -19,8 +19,8 @@ func _physics_process(delta):
 	inputVector = inputVector.normalized()
 	
 	if Vector2.ZERO != inputVector:
-		velocity = velocity.move_toward(inputVector * MAX_SPEED, ACCELERATION)
+		velocity = velocity.move_toward(inputVector * MAX_SPEED, ACCELERATION * delta)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
-	move_and_collide(velocity * delta)
+	velocity = move_and_slide(velocity)
