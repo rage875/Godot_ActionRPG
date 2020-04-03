@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.93114
+height = 7.19047
+
 [node name="World" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 33.3102, 33.8032 )
+position = Vector2( 37.8106, 25.3822 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -15,3 +19,8 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 1 )
 hframes = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -1.20697, 8.07322 )
+rotation = -1.5708
+shape = SubResource( 1 )
