@@ -7,20 +7,17 @@
 radius = 4.93114
 height = 7.19047
 
-[node name="World" type="Node2D"]
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 37.8106, 25.3822 )
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Player"]
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 60
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.20697, 8.07322 )
 rotation = -1.5708
 shape = SubResource( 1 )
